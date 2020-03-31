@@ -4,13 +4,13 @@ get top n from big url file
 ## usage
 ./url100g -s [seperate count] -b [big file fullpath] -o [output dir] -n [top n]
 <br>
+将100Gurl文件[-b]按行读取，hash之后分为[-s]片，输出到[-o]目录，求TopN[-n]
+
+<br>
 ### for example
 ```
 ./url100g -s 1013 -b "/data/home/twl/gotest/src/github.com/codertwl/url100g/tmp/urls.txt" -o "/data/home/twl/gotest/src/github.com/codertwl/url100g/tmp" -n 100
 ```
-<br>
-将100Gurl文件[-b]按行读取，hash之后分为[-s]片，输出到[-o]目录，求TopN[-n]
-<br>
 
 ## 算法简介
 100GB url 文件在有限内存中进行TopN操作，需要对文件进行分片，满足内存要求后再进行处理
