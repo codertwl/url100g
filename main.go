@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/codertwl/url100g/logic"
 	"os"
+	"time"
 )
 
 const ()
@@ -43,10 +44,12 @@ func main() {
 	}
 
 	//seperate big file
+	start := time.Now().Unix()
 	logic.SepBigFile(bigFile, outPath, sepMax, n)
+	fmt.Println("sep over...cost ", time.Now().Unix()-start, " sec")
 
 	//get top n
+	start = time.Now().Unix()
 	logic.TopN(outPath, n)
-
-	fmt.Println("over...")
+	fmt.Println("topn over...cost ", time.Now().Unix()-start, " sec")
 }
