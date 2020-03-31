@@ -16,7 +16,7 @@ func main() {
 	//parse param
 	flag.IntVar(&sepMax, "s", 11731, "")
 	flag.StringVar(&bigFile, "b", "", "")
-	flag.StringVar(&outPath, "o", "", "")
+	flag.StringVar(&outPath, "o", "./tmp", "default ./tmp")
 	flag.IntVar(&n, "n", 100, "")
 	flag.Parse()
 
