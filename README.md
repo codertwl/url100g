@@ -1,4 +1,4 @@
-# url100g
+# 100GB url 文件在有限内存下进行TopN操作
 get top n from big url file
 
 ## usage
