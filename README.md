@@ -1,7 +1,7 @@
 # url100g
 get top n from 100 gb url 
 
-# usage
+## usage
 ./url100g -s [seperate count] -b [big file fullpath] -o [output dir] -n [top n]
 <br>
 ## for example
