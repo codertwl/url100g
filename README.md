@@ -6,8 +6,10 @@ get top n from big url file
 <br>
 ### for example
 ```
-./url100g -s 5 -b "/data/home/twl/gotest/src/github.com/codertwl/url100g/tmp/urls.txt" -o "/data/home/twl/gotest/src/github.com/codertwl/url100g/tmp" -n 60
+./url100g -s 1013 -b "/data/home/twl/gotest/src/github.com/codertwl/url100g/tmp/urls.txt" -o "/data/home/twl/gotest/src/github.com/codertwl/url100g/tmp" -n 100
 ```
+<br>
+将100Gurl文件[-b]按行读取，hash之后分为[-s]片，输出到[-o]目录，求TopN[-n]
 <br>
 
 ## 算法简介
