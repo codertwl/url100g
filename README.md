@@ -5,8 +5,8 @@ get top n from big url file
 ./url100g -s [seperate count] -b [big file fullpath] -o [output dir] -n [top n]
 <br>
 将100Gurl文件[-b]按行读取，hash之后分为[-s]片，输出到[-o]目录，求TopN[-n]
-
 <br>
+
 ### for example
 ```
 ./url100g -s 1013 -b "/data/home/twl/gotest/src/github.com/codertwl/url100g/tmp/urls.txt" -o "/data/home/twl/gotest/src/github.com/codertwl/url100g/tmp" -n 100
