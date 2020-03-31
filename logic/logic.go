@@ -170,7 +170,7 @@ func saveSortFile(mUrlCount map[string]int64, saveNo, topN int, sortPath string)
 			break
 		}
 
-		line := fmt.Sprintf("%s,%d\n", strings.Trim(v.url, "\n"), v.cnt)
+		line := fmt.Sprintf("%s %d\n", strings.Trim(v.url, "\n"), v.cnt)
 		n, err := w.WriteString(line)
 		if err != nil {
 			panic(fmt.Sprintf("write:%d sortfile err:%s", n, err))
@@ -240,7 +240,7 @@ func TopN(outPath string, n int) {
 				}
 			}
 
-			seps := strings.Split(line, ",")
+			seps := strings.Split(line, " ")
 			if len(seps) != 2 {
 				panic("sep line wrong:" + line)
 			}
@@ -254,5 +254,15 @@ func TopN(outPath string, n int) {
 		}
 	}
 
-	fmt.Printf("topN:%+v total:%d\n", heapN, total)
+	ret := make([]*UC, 0, heapN.Len())
+	for heapN.Len() > 0 {
+		t := heapN.Pop()
+		ucT := t.(*UC)
+		ret = append(ret, ucT)
+	}
+
+	for i := len(ret) - 1; i >= 0; i-- {
+		fmt.Println(len(ret)-i, " : ", ret[i].url, " --------- ", ret[i].cnt)
+	}
+
 }
