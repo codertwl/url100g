@@ -246,9 +246,9 @@ func TopN(outPath string, n int) {
 			}
 			cnt, _ := strconv.ParseInt(strings.Trim(seps[1], "\n"), 10, 64)
 
-			heapN.Push(&UC{url: seps[0], cnt: cnt})
+			heap.Push(&heapN, &UC{url: seps[0], cnt: cnt})
 			if heapN.Len() > n {
-				heapN.Pop()
+				heap.Pop(&heapN)
 			}
 			total++
 		}
@@ -256,7 +256,7 @@ func TopN(outPath string, n int) {
 
 	ret := make([]*UC, 0, heapN.Len())
 	for heapN.Len() > 0 {
-		t := heapN.Pop()
+		t := heap.Pop(&heapN)
 		ucT := t.(*UC)
 		ret = append(ret, ucT)
 	}
